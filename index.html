@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пятка Ахиллеса - Сделки по фьючерсам</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="libs/gsap/gsap.min.js" defer></script>
+    <script src="libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="libs/gsap/ScrollSmoother.min.js" defer></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+</head>
+
+<body>
+    <div class="animationLoader">
+
+        <div class="animationLoader__image">
+            <video class="animation" src="img/eth.gif"></video>
+        </div>
+
+    </div>
+    <script>
+        window.onload = function () {
+            document.body.classList.add('animation_hiding');
+
+            window.setTimeout(function () {
+                document.body.classList.add('animation');
+                document.body.classList.remove('animation_hiding');
+                // После завершения первой анимации вызываем функцию для анимации блоков
+                animateBlocks();
+                getEthereumPrice();
+            }, 790);
+        }
+
+        // Функция для анимации блоков
+        function animateBlocks() {
+            var blockOne = document.getElementById("one");
+            var blockTwo = document.getElementById("two");
+
+            blockOne.style.transform = "translateX(-100%)";
+            blockTwo.style.transform = "translateX(100%)";
+
+            var duration = 400; // длительность анимации в миллисекундах
+
+            blockOne.animate([
+                { transform: 'translateX(-100%)' },
+                { transform: 'translateX(5%)' },
+                { transform: 'translateX(0%)' }
+            ], {
+                duration: duration,
+                easing: 'linear',
+                fill: 'forwards'
+            });
+
+            blockTwo.animate([
+                { transform: 'translateX(100%)' },
+                { transform: 'translateX(-5%)' },
+                { transform: 'translateX(0%)' }
+            ], {
+                duration: duration,
+                easing: 'linear',
+                fill: 'forwards'
+            });
+        }
+
+        function getEthereumPrice() {
+            // Создаем объект XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+
+            // Открываем соединение и задаем метод GET и URL-адрес для запроса к API Binance
+            xhr.open('GET', 'https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT', true);
+
+            // Устанавливаем обработчик события загрузки данных
+            xhr.onload = function () {
+                // Парсим ответ в формате JSON
+                var response = JSON.parse(this.responseText);
+
+                // Получаем цену Ethereum из ответа
+                var ethereumPrice = (Math.round(response.price * 100) / 100).toFixed(2);
+
+                // Выводим цену Ethereum на веб-страницу
+                document.getElementById('price').textContent = ethereumPrice + '$';
+            };
+
+            // Отправляем запрос
+            xhr.send();
+        }
+
+    
+    </script>
+
+    <div class="wrapper" id="wrapper">
+        <div class="content" id="content">
+            <header id="header">
+                <div style="width: 100%; height: 100%;">
+                    <div id="maintxt" style="display: flex; justify-content: center; align-items: center;">
+                        <p style="font-family: Vezitsa; font-size: 370%;">Пятка Ахиллеса</p>
+                    </div>
+                    <div data-speed=".9" id="tgblock" style="display: flex; justify-content: space-around;">
+                        <div class="maintg left" id="one">
+                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Наш телеграм-канал предлагает вам
+                                торгавать по нашим сделкам на фьючерсах, с которыми может заработать каждый.</p>
+                            <a class="m-8-btn" href="https://t.me/+wbqj12wu4d01NDhi">
+                                <p style="padding-left: 10px;">Наш канал</p>
+                            </a>
+                        </div>
+                        <div class="carde">
+                            <svg class="img" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="20%"
+                                height="100%" version="1.1" shape-rendering="geometricPrecision"
+                                text-rendering="geometricPrecision" image-rendering="optimizeQuality"
+                                fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 700 1277.39"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="Layer_x0020_1">
+                                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                    <g id="_1421394342400">
+                                        <g>
+                                            <polygon fill="#343434" fill-rule="nonzero"
+                                                points="392.07,0 383.5,29.11 383.5,873.74 392.07,882.29 784.13,650.54">
+                                            </polygon>
+                                            <polygon fill="#8C8C8C" fill-rule="nonzero"
+                                                points="392.07,0 -0,650.54 392.07,882.29 392.07,472.33"></polygon>
+                                            <polygon fill="#3C3C3B" fill-rule="nonzero"
+                                                points="392.07,956.52 387.24,962.41 387.24,1263.28 392.07,1277.38 784.37,724.89">
+                                            </polygon>
+                                            <polygon fill="#8C8C8C" fill-rule="nonzero"
+                                                points="392.07,1277.38 392.07,956.52 -0,724.89"></polygon>
+                                            <polygon fill="#141414" fill-rule="nonzero"
+                                                points="392.07,882.29 784.13,650.54 392.07,472.33"></polygon>
+                                            <polygon fill="#393939" fill-rule="nonzero"
+                                                points="0,650.54 392.07,882.29 392.07,472.33"></polygon>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+                            <div class="textBox">
+                                <p class="text head">Ethereum</p>
+                                <span>Cryptocurrency</span>
+                                <p id="price" style="font-size: 17px;">1.654,34€</p>
+                            </div>
+                        </div>
+                        <div class="maintg right" id="two">
+                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Если у вас вдруг появяться вопросы, вы
+                                можете написать нам в личные сообщения в телеграмм и мы спешно ответим на них!</p>
+                            <a class="m-8-btn" href="https://t.me/ahill_trader">
+                                <p style="padding-left: 10px;">Написать</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </header>
+
+            <main>
+                <div class="containers" style=" width: 100%; margin-bottom: 18vh;">
+                    <section data-speed="2" class="about" style="text-align: center; width: 100%;">
+                        <p style="font-size: 200%;">Здесь вы можете найти наши результаты</p>
+                    </section>
+                    <section id="gallery" data-speed=".9" style="width: 100%; display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; margin-top: 1vh;">
+
+                        <div class="maintg left" style="margin: 5% 2% 5%;">
+                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">В данном фото альбоме вы можете увидеть
+                                результаты последних 4 сигналов с нашего канала. <br> P.S. наведись на фото</p>
+                            <a class="m-8-btn" href="https://t.me/+wbqj12wu4d01NDhi">
+                                <p style="padding-left: 10px;">Наш канал</p>
+                            </a>
+                        </div>
+
+                        <div class="container gallery__item">
+
+                            <div class="card">
+                                <img class="cardphoto" src="img/screen1.jpg" alt="" width="300" height="242">
+                            </div>
+
+                            <div class="card">
+                                <img class="cardphoto" src="img/screen2.jpg" alt="" width="300" height="242">
+                            </div>
+
+                            <div class="card">
+                                <img class="cardphoto" src="img/screen3.jpg" alt="" width="300" height="242">
+                            </div>
+
+                            <div class="card">
+                                <img class="cardphoto" src="img/screen4.jpg" alt="" width="300" height="242">
+                            </div>
+                        </div>
+                        <div class="maintg right" style="margin: 5% 2% 5%;">
+                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Если у вас также есть скрины с профитами
+                                по нашим сделкам, или есть закрытые сделки, то пришлите их нам нажав на кнопку ниже!</p>
+                            <a class="m-8-btn" href="https://t.me/ahill_program">
+                                <p style="padding-left: 10px;">Написать</p>
+                            </a>
+                        </div>
+
+                    </section>
+                    <div style="display:flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20%; ">
+
+                        <div class="maintg left" style="margin-left: 2%; margin-right: 2%;">
+                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Наш канал всегда следит за сделками, и держит наших подписчиков на чеку! Если у рынка не понятное поведение наша комнда будет уведомлять вас о каждом импульсе и будет помогать принимать решенья, поэтому предлогаю вам подписаться, закрепить канал и ждать нового сигнала!</p>
+                            </a>
+                        </div>
+
+                        <div class="iphone right">
+                            <div class="iphone-14">
+                                <div class="operator-name">Coding</div>
+                                <div class="dynamic-island"></div>
+                                <div class="dynamic-island-camera"></div>
+                                <div class="operator-icons">
+                                    <i class="bi bi-reception-4"></i>
+                                    5G
+                                    <div class="battery">100</div>
+                                </div>
+                                <div class="date-area">
+
+                                    <span class="month"></span>
+                                    <span class="day-name"></span>
+                                    <span class="day"></span>
+                                </div>
+
+                                <div class="clock-area"></div>
+
+                                <div class="notification">
+                                    <a target="_blank">
+                                        <img class="img" src="img/tg.svg" width="30" height="30"
+                                            style="display: block; float: left; margin-right: 40px; margin-top: 10px;">
+                                        <div style="display: flex; flex-direction: column; margin-left: 40px; justify-content: center; margin-top: 5px; margin-bottom: 5px; margin-right: 5px;">
+                                            <p style="font-family: sf-pro; font-size: 15px; margin: 0;">Пятка ахиллеса trading</p>
+                                            <div class="notification-text">Забрали первый тэйк</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            
+                            <div class="flash-and-camera">
+                                <a target="_blank"><img
+                                        src="https://raw.githubusercontent.com/zouraiz523/iphone-14-pro-max/main/Phone%2014%20Pro%20Max%20and%20Dynamic%20Island/img-L.png"
+                                        width="20" />
+                                    <i class="bi bi-camera-fill"></i></a>
+                            </div>
+
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+        </main>
+
+        <footer>
+            <div style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
+                <a class="m-8-btn" style="margin-top: 10px; margin-bottom: 10px;" href="https://t.me/+wbqj12wu4d01NDhi">
+                    <p style="padding-left: 10px;">Наш канал</p>
+                </a>
+                <div id="footer" style="font-size: 20px; margin-top: 5vh;">
+                    &copy; All rights reserved
+                </div>
+                <a class="m-8-btn" style="margin-top: 10px; margin-bottom: 10px;" href="https://t.me/ahill_trader">
+                    <p style="padding-left: 10px;">Связь с нами</p>
+                </a>
+            </div>
+        </footer>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,946 @@
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    --color: rgba(114, 114, 114, 0.3);
+    background-color: #191a1a;
+    background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+        linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+    background-size: 55px 55px;
+}
+
+
+
+#maintxt:after {
+    width: 101px;
+    height: 101px;
+    min-width: 101px;
+    margin-left: 12px;
+    content: '';
+    display: block;
+    margin-right: 5%;
+    background-image: url(img/crypto.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.5s;
+}
+
+#maintxt:hover::after {
+  transform: rotateY(180deg); /* Поворачиваем псевдоэлемент по оси Y на 180 градусов при наведении */
+}
+
+.maintg { 
+    width: 379px;
+    
+    text-align: left; 
+    margin-left: 5%; 
+    margin-right: 5%; 
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    background: rgb(46,46,46);
+    background: linear-gradient(180deg, rgba(46,46,46,1) 0%, rgba(133,133,133,1) 45%, rgba(176,176,176,1) 100%);
+    padding: 20px; border-radius: 20px; 
+    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.384); 
+    font-size: 2em; 
+    hyphens: auto;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.containers {
+    width: 80%;
+    text-align: center;
+    
+}
+header {
+    padding: 20px 0;
+    height: 100vh;
+}
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #131010;
+}
+
+
+button {
+    background-color: #0044cc;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.wrapper {
+    width: var(--container-width);
+    max-width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+}
+
+.m-8-btn {
+    border-radius: 30px;
+    background: #7CAFFE;
+    width: 260px;
+    max-width: 100%;
+    height: 83px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.12px;
+    text-decoration: none;
+    transition: background-color 0.5s linear;
+}
+
+.m-8-btn:after {
+    width: 41px;
+    height: 41px;
+    min-width: 41px;
+    margin-left: 12px;
+    content: '';
+    display: block;
+    margin-right: 5%;
+    background-image: url(img/tg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.m-8-btn:hover {
+    background: #ffffff;
+}
+
+button:hover {
+    background-color: #003399;
+}
+
+.phmain {
+    border-radius: 20px; margin-left: 2%; margin-right: 2%; border: 5px solid; display: block; float: left; margin-top: 2%;
+}
+
+
+@font-face {
+    font-family: "Vezitsa"; 
+    src: url("fonts/ofont.ru_Vezitsa.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: bold; 
+  } 
+
+  @font-face {
+    font-family: "sf-pro"; 
+    src: url("fonts/SF-Pro.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: bold; 
+  } 
+
+@media (min-width: 769px) {
+    .maintg {       
+   animation: gradient 5s infinite linear;
+    }
+
+    .carde {
+        margin-top: 18vh;
+        width: 15%;
+        height: 60%; 
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        transition: 0.2s ease-in-out;
+      }
+      
+      .img {
+        height: 50%;
+        position: absolute;
+        transition: 0.2s ease-in-out;
+        z-index: 1;
+      }
+      
+      .textBox {
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        transition: 0.2s ease-in-out;
+        z-index: 2;
+      }
+      
+      .textBox > .text {
+        font-weight: bold;
+      }
+      
+      .textBox > .head {
+        font-size: 20px;
+      }
+      
+      .textBox > #price {
+        font-size: 17px;
+      }
+      
+      .textBox > span {
+        font-size: 12px;
+        color: lightgrey;
+      }
+      
+      .carde:hover > .textBox {
+        opacity: 1;
+      }
+      
+      .carde:hover > .img {
+        height: 100%;
+        filter: blur(7px);
+        animation: anim 3s infinite;
+        
+      }
+      
+      @keyframes anim {
+        0% {
+          transform: translateY(0);
+        }
+      
+        50% {
+          transform: translateY(-20px);
+        }
+      
+        100% {
+          transform: translateY(0);
+        }
+      }
+      
+      .carde:hover {
+        transform: scale(2.04) rotate(-2deg);
+      }
+      
+      
+}
+
+
+@media (max-width: 768px) {
+    header {
+        height: 100%;
+    }
+    
+
+    #tgblock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .maintg {
+        width: 80%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .carde {
+        display: none;
+    }
+    
+}
+
+
+
+
+.animationLoader {
+
+    position: fixed; 
+    left: 0; 
+    top: 0;
+    right: 0; 
+    bottom: 0;   
+    background: rgb(0, 0, 0);  
+    z-index: 1001; 
+  }
+  
+   
+  
+  .animationLoader__image {
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    width: 30%;
+    height: 30%;
+    background: url('img/eth.gif') no-repeat 50% 50%; /*в ссылке указываете путь до GIF-картинки, расположенной на вашем сайте*/
+    background-size: 45%;
+  
+  }
+  
+   
+  
+  .lanimation_hiding .animationLoader {
+  
+    transition: 0.3s opacity;
+  
+    opacity: 0;
+  
+  }
+  
+   
+  
+  .animation .animationLoader {
+  
+    display: none;
+  
+  }
+
+
+
+  .container {
+    margin-top: 16vh;
+    margin-bottom: 16vh;
+    position: relative;
+    width: 300px;
+    height: 242px;
+    cursor: pointer;
+  }
+  
+  .card {
+    position: absolute;
+    inset: 2.5px;
+    border-radius: 20px;
+    transform-origin: bottom left;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f1f4f7;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+  }
+  
+  .container:hover .card:nth-child(1) {
+    animation: cardAnimation1 4s 0.5s infinite ease;
+  }
+  
+  .container:hover .card:nth-child(2) {
+    animation: cardAnimation2 4s 1s infinite ease;
+  }
+  
+  .container:hover .card:nth-child(3) {
+    animation: cardAnimation3 4s 1.5s infinite ease;
+  }
+  
+  .container:hover .card:nth-child(4) {
+    animation: cardAnimation4 4s 2s infinite ease;
+  }
+  
+  .card:nth-child(1) {
+    background: linear-gradient(0deg, #525252 0%, #dddddd 100%);
+  }
+  
+  .card:nth-child(2) {
+    background: linear-gradient(0deg, #b3ffab 0%, #12fff7 100%);
+    opacity: 0;
+  }
+  
+  .card:nth-child(3) {
+    background: linear-gradient(178deg, #ffb99a 0%, #ffdbc5 100%);
+    opacity: 0;
+  }
+  
+  .card:nth-child(4) {
+    background: linear-gradient(178deg, #606c88 0%, #3f4c6b 100%);
+    opacity: 0;
+  }
+  
+  @keyframes cardAnimation1 {
+    0% {
+      transform: rotateZ(0deg);
+      opacity: 0;
+      z-index: -1;
+    }
+  
+    25% {
+      transform: rotateZ(-20deg);
+      opacity: 1;
+      z-index: 0;
+    }
+  
+    50% {
+      transform: rotateZ(0deg);
+      z-index: 1;
+      opacity: 1;
+    }
+  
+    75% {
+      transform: rotateZ(20deg);
+      z-index: 0;
+      opacity: 1;
+    }
+  
+    100% {
+      transform: rotateZ(0deg);
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes cardAnimation2 {
+    0% {
+      transform: rotateZ(0deg);
+      z-index: -1;
+      opacity: 0;
+    }
+  
+    45% {
+      transform: rotateZ(-15deg);
+      z-index: 0;
+      opacity: 1;
+    }
+  
+    60% {
+      transform: rotateZ(0deg);
+      z-index: 1;
+      opacity: 1;
+    }
+  
+    75% {
+      transform: rotateZ(15deg);
+      z-index: 0;
+      opacity: 1;
+    }
+  
+    100% {
+      transform: rotateZ(0deg);
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes cardAnimation3 {
+    0% {
+      transform: rotateZ(0deg);
+      z-index: -1;
+      opacity: 0;
+    }
+  
+    45% {
+      transform: rotateZ(-20deg);
+      z-index: 0;
+      opacity: 0;
+    }
+  
+    60% {
+      transform: rotateZ(0deg);
+      z-index: 1;
+      opacity: 1;
+    }
+  
+    75% {
+      transform: rotateZ(20deg);
+      z-index: 0;
+      opacity: 1;
+    }
+  
+    100% {
+      transform: rotateZ(0deg);
+      z-index: -1;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes cardAnimation4 {
+    0% {
+      transform: rotateZ(0deg);
+      z-index: 0;
+      opacity: 0;
+    }
+  
+    35% {
+      transform: rotateZ(-25deg);
+      z-index: 0;
+      opacity: 0.0;
+    }
+  
+    75% {
+      transform: rotateZ(0deg);
+      z-index: 1;
+      opacity: 1;
+    }
+  
+    90% {
+      transform: rotateZ(25deg);
+      z-index: 0;
+      opacity: 1;
+    }
+  
+    100% {
+      transform: rotateZ(0deg);
+      z-index: 0;
+      opacity: 0;
+    }
+  }
+
+
+.cardphoto {
+  border-radius: 20px;
+}
+  
+  
+
+.device,
+.device::before,
+.device::after,
+.device *,
+.device *::before,
+.device *::after {
+	box-sizing: border-box;
+	display: block;
+}
+.device {
+	position: relative;
+	margin: 30px auto;
+}
+.device .device-frame {
+	z-index: 1;
+}
+.device-iphone-x {
+	height: 694px;
+	width: 342px;
+}
+.device-iphone-x .device-frame {
+	background: #222;
+	border-radius: 54px;
+	box-shadow: inset 0 0 0 2px #606467, inset 0 0 0 6px #e2e3e4;
+	height: 694px;
+	padding: 22px;
+	width: 342px;
+}
+.device-iphone-x .device-content {
+	background-color: #fff;
+	background-image: url("img/iphone.PNG");
+	background-position: center center;
+	background-size: cover;
+	border-radius: 32px;
+	height: 650px;
+	position: relative;
+	width: 300px;
+}
+.device-iphone-x .device-stripe::after,
+.device-iphone-x .device-stripe::before {
+	border: solid rgba(51, 51, 51, .25);
+	border-width: 0 6px;
+	content: "";
+	height: 5px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 9;
+}
+.device-iphone-x .device-stripe::after {
+	top: 68px;
+}
+.device-iphone-x .device-stripe::before {
+	bottom: 68px;
+}
+.device-iphone-x .device-header {
+	background: #222;
+	border-bottom-left-radius: 16px;
+	border-bottom-right-radius: 16px;
+	height: 24px;
+	left: 50%;
+	margin-left: -82px;
+	position: absolute;
+	top: 22px;
+	width: 164px;
+	z-index: 199;
+}
+.device-iphone-x .device-header::after,
+.device-iphone-x .device-header::before {
+	content: "";
+	height: 6px;
+	position: absolute;
+	top: 0;
+	width: 6px;
+}
+.device-iphone-x .device-header::after {
+	background: radial-gradient(circle at bottom left, transparent 0, transparent 75%, #222 75%, #222 100%);
+	left: -6px;
+}
+.device-iphone-x .device-header::before {
+	background: radial-gradient(circle at bottom right, transparent 0, transparent 75%, #222 75%, #222 100%);
+	right: -6px;
+}
+.device-iphone-x .device-sensors::after,
+.device-iphone-x .device-sensors::before {
+	content: "";
+	position: absolute;
+}
+.device-iphone-x .device-sensors::after {
+	background: #444;
+	border-radius: 2.5px;
+	height: 5px;
+	left: 50%;
+	margin-left: -20px;
+	top: 4px;
+	width: 40px;
+}
+.device-iphone-x .device-sensors::before {
+	background: #444;
+	border-radius: 50%;
+	height: 11px;
+	left: 50%;
+	margin-left: 30px;
+	top: 1px;
+	width: 11px;
+}
+.device-iphone-x .device-btns {
+	background: #606467;
+	height: 26px;
+	left: -2px;
+	position: absolute;
+	top: 92px;
+	width: 3px;
+}
+.device-iphone-x .device-btns::after,
+.device-iphone-x .device-btns::before {
+	background: #606467;
+	content: "";
+	height: 50px;
+	left: 0;
+	position: absolute;
+	width: 3px;
+}
+.device-iphone-x .device-btns::after {
+	top: 48px;
+}
+.device-iphone-x .device-btns::before {
+	top: 112px;
+}
+.device-iphone-x .device-power {
+	background: #606467;
+	height: 80px;
+	position: absolute;
+	right: -2px;
+	top: 160px;
+	width: 3px;
+}
+
+
+.iphone{
+  border: 4px solid #3b444b;
+  border-radius: 50px;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.iphone-14{
+  width: 300px;
+  height: 600px;
+  border: 5px solid black;
+  background: white;
+   background-image: url("https://raw.githubusercontent.com/zouraiz523/iphone-14-pro-max/main/Phone%2014%20Pro%20Max%20and%20Dynamic%20Island/img-bg.webp");
+  background-repeat: no-repeat;
+  background-size: 301px 600px;
+  border-radius: 47px;
+  position: relative;
+}
+
+.operator-name{
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  font-size: 14px;
+  color: white;
+}
+
+.dynamic-island{
+  width: 100px;
+  height: 25px;
+  background: black;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: absolute;
+  left: 100px;
+  z-index: 99999;
+  transition: all .5s;
+}
+
+.dynamic-island-camera{
+  color: white;
+  position: absolute;
+  top: 18px;
+  right: 110px;
+  background: #121212;
+  box-shadow: 0 0 1px grey;
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  z-index: 99999;
+  transition: all .5s;
+}
+
+.operator-icons{
+  position: absolute;
+  top: 16px;
+  right: 50px;
+  font-size: 14px;
+  transition: all .2s;
+  color: white;
+}
+
+.battery{
+  width: 20px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: 10px;
+  text-align: center;
+  color: #000;
+  background: #Fefefe;
+  font-weight: bold;
+  position: absolute;
+  top: 0px;
+  right: -28px;
+}
+
+.date-area{
+  margin-top: 60px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.clock-area{
+  margin-top: 5px;
+  width: 100%;
+  text-align: center;
+  font-size: 60px;
+  font-family: 'Monoton', cursive;
+  color: white;
+}
+
+
+.quiet{
+  display: none;
+  color: gray;
+  transition: all 2s;
+  animation: bellNtf 2s;
+}
+
+@keyframes bellNtf{
+  0%,40%,80%, 100%{color: gray;}
+  10%,60%, 90%{color: red;}
+}
+
+.notification{
+  width: 250px;
+  margin: 0 20px;
+  margin-top: 50px;
+  padding: 5px;
+  border-radius: 10px;
+  position: absolute;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.250);
+  display: flex;
+  justify-content: center;
+  
+  
+  color: white;
+
+}
+
+.iphone-14:hover .notification{
+  transition: all .5s;
+  animation: notification .5s forwards;
+}
+
+
+@keyframes notification{
+  from{
+    bottom:180px;
+    opacity: 0;
+    visibility: hidden;
+  } to{
+    bottom: 100px;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.notification-text{
+  font-size: 15px;
+  color:#fff;
+  margin-left: 0;
+}
+
+.flash-and-camera img{
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  filter: invert(100%);
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.337);
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 99999;
+}
+
+.flash-and-camera img:hover{
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.flash-and-camera i{
+  position: absolute;
+  bottom: 30px;
+  right: 20px;
+  color: black;
+  filter: invert(100%);
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.337);
+  z-index: 99999;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.flash-and-camera i:hover{
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.line{
+  position: absolute;
+  bottom: 10px;
+  width: 100px;
+  height: 5px;
+  border-radius: 50px;
+  background: #fff;
+  left: 100px;
+}
+
+.bell-animation-area{
+  width: 100px;
+  height: 25px;
+  background: black;
+  border-radius: 47px;
+  position: absolute;
+  left: 100px;
+  top: 10px;
+  z-index: 99999;
+  display: none;
+  color: #fff;
+  animation: dynamicIslandAnm 7s;
+}
+
+@keyframes dynamicIslandAnm {
+  0%, 100%{width: 100px; height: 25px; left: 100px; opacity: 0 !important;}
+  20%, 80%{width: 270px; height: 40px; left: 15px; display: block;}
+}
+
+.bell-animation{
+  position: absolute;
+  width: 100%;
+  top: 15px;
+  visibility: hidden;
+  opacity: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99999;
+  transition: all 1s;
+  animation: dynamicIslandText 5s;
+  display: none;
+  color: #fff;
+}
+
+@keyframes dynamicIslandText {
+  0%, 100%{top: 10px; visibility: hidden; opacity: 0}
+  20%, 80%{top: 22px; visibility: visible; opacity: 1}
+}
+
+.bell-animation i{
+  color: red;
+}
+
+
+.bell-animation-area-slash{
+  width: 100px;
+  height: 25px;
+  background: #000;
+  border-radius: 47px;
+  position: absolute;
+  left: 100px;
+  top: 10px;
+  z-index: 99999;
+  display: none;
+  color: #fff;
+  animation: dynamicIslandAnm 7s;
+}
+
+@keyframes dynamicIslandAnm {
+  0%, 100%{width: 100px; height: 25px; left: 100px; opacity: 0 !important;}
+  20%, 80%{width: 270px; height: 40px; left: 15px; display: block;}
+}
+
+
+
+.c-gray{
+  color: gray;
+}
+
+.bi-soundwave{
+  position: absolute;
+  top: 14px;
+  color: #fff;
+  left: 120px;
+  z-index: 99999;
+  animation: volumeUp 3s infinite;
+  display: none;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+@keyframes volumeUp {
+  0%, 50%, 100%{
+    color: #fff; opacity: 1;
+  }
+  20%, 40%, 60%, 80%{
+    color: #ffd0c7; opacity: .8;
+  }
+}
+
+#sarki{
+  height: 15px;
+  width: 430px;
+  position: absolute;
+  left: -110px;
+  margin-top: 10px;
+}
