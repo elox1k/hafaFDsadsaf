@@ -34,10 +34,10 @@
                 document.body.classList.remove('animation_hiding');
                 // После завершения первой анимации вызываем функцию для анимации блоков
                 animateBlocks();
-                getEthereumPrice();
+
             }, 790);
         }
-
+        getEthereumPrice();
         // Функция для анимации блоков
         function animateBlocks() {
             var blockOne = document.getElementById("one");
@@ -92,77 +92,107 @@
             xhr.send();
         }
 
-    
+
     </script>
 
     <div class="wrapper" id="wrapper">
         <div class="content" id="content">
             <header id="header">
-                <div style="width: 100%; height: 100%;">
-                    <div id="maintxt" style="display: flex; justify-content: center; align-items: center;">
-                        <p style="font-family: Vezitsa; font-size: 370%;">Пятка Ахиллеса</p>
+
+                <div id="maintxt" style="display: flex; justify-content: center; align-items: center;">
+                    <p style="font-family: Vezitsa; font-size: 370%; margin-left: 5%; margin-bottom: 5%;">Пятка Ахиллеса</p>
+                </div>
+                <div id="hcontent">
+                    <div id="mpt">
+                        <b style="color: #7CAFFE; font-size: 4em;">По нашим сигналам</b> <br> <b
+                            style="font-size: 3em;">деруться римляни! </b>
                     </div>
-                    <div data-speed=".9" id="tgblock" style="display: flex; justify-content: space-around;">
-                        <div class="maintg left" id="one">
-                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Наш телеграм-канал предлагает вам
-                                торгавать по нашим сделкам на фьючерсах, с которыми может заработать каждый.</p>
-                            <a class="m-8-btn" href="https://t.me/+wbqj12wu4d01NDhi">
-                                <p style="padding-left: 10px;">Наш канал</p>
-                            </a>
+
+                    <div class="loader">
+                        <div class="box box-1">
+                            <div class="side-left"></div>
+                            <div class="side-right"></div>
+                            <div class="side-top"> <b><br>стоплос</b></div>
                         </div>
-                        <div class="carde">
-                            <svg class="img" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="20%"
-                                height="100%" version="1.1" shape-rendering="geometricPrecision"
-                                text-rendering="geometricPrecision" image-rendering="optimizeQuality"
-                                fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 700 1277.39"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <g id="Layer_x0020_1">
-                                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
-                                    <g id="_1421394342400">
-                                        <g>
-                                            <polygon fill="#343434" fill-rule="nonzero"
-                                                points="392.07,0 383.5,29.11 383.5,873.74 392.07,882.29 784.13,650.54">
-                                            </polygon>
-                                            <polygon fill="#8C8C8C" fill-rule="nonzero"
-                                                points="392.07,0 -0,650.54 392.07,882.29 392.07,472.33"></polygon>
-                                            <polygon fill="#3C3C3B" fill-rule="nonzero"
-                                                points="392.07,956.52 387.24,962.41 387.24,1263.28 392.07,1277.38 784.37,724.89">
-                                            </polygon>
-                                            <polygon fill="#8C8C8C" fill-rule="nonzero"
-                                                points="392.07,1277.38 392.07,956.52 -0,724.89"></polygon>
-                                            <polygon fill="#141414" fill-rule="nonzero"
-                                                points="392.07,882.29 784.13,650.54 392.07,472.33"></polygon>
-                                            <polygon fill="#393939" fill-rule="nonzero"
-                                                points="0,650.54 392.07,882.29 392.07,472.33"></polygon>
-                                        </g>
-                                    </g>
-                                </g>
-                            </svg>
-                            <div class="textBox">
-                                <p class="text head">Ethereum</p>
-                                <span>Cryptocurrency</span>
-                                <p id="price" style="font-size: 17px;">1.654,34€</p>
-                            </div>
+                        <div class="box box-2">
+                            <div class="side-left"></div>
+                            <div class="side-right"></div>
+                            <div class="side-top"><b><br>тэйк</b> </div>
                         </div>
-                        <div class="maintg right" id="two">
-                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Если у вас вдруг появяться вопросы, вы
-                                можете написать нам в личные сообщения в телеграмм и мы спешно ответим на них!</p>
-                            <a class="m-8-btn" href="https://t.me/ahill_trader">
-                                <p style="padding-left: 10px;">Написать</p>
-                            </a>
+                        <div class="box box-3">
+                            <div class="side-left"></div>
+                            <div class="side-right"></div>
+                            <div class="side-top"><b><br>плечи</b></div>
+                        </div>
+                        <div class="box box-4">
+                            <div class="side-left"></div>
+                            <div class="side-right"></div>
+                            <div class="side-top"><b><br>тактика</b></div>
                         </div>
                     </div>
                 </div>
-
-
             </header>
 
+
+            <div id="header2">
+
+                <div data-speed=".9" id="tgblock" style="display: flex; justify-content: space-around;">
+                    <div class="maintg left" id="one">
+                        <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Наш телеграм-канал предлагает вам
+                            торгавать по нашим сделкам на фьючерсах, с которыми может заработать каждый.</p>
+                        <a class="m-8-btn" href="https://t.me/+wbqj12wu4d01NDhi">
+                            <p style="padding-left: 10px;">Наш канал</p>
+                        </a>
+                    </div>
+                    <div class="carde">
+                        <svg class="img" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="20%"
+                            height="100%" version="1.1" shape-rendering="geometricPrecision"
+                            text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
+                            clip-rule="evenodd" viewBox="0 0 700 1277.39" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="Layer_x0020_1">
+                                <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                                <g id="_1421394342400">
+                                    <g>
+                                        <polygon fill="#343434" fill-rule="nonzero"
+                                            points="392.07,0 383.5,29.11 383.5,873.74 392.07,882.29 784.13,650.54">
+                                        </polygon>
+                                        <polygon fill="#8C8C8C" fill-rule="nonzero"
+                                            points="392.07,0 -0,650.54 392.07,882.29 392.07,472.33"></polygon>
+                                        <polygon fill="#3C3C3B" fill-rule="nonzero"
+                                            points="392.07,956.52 387.24,962.41 387.24,1263.28 392.07,1277.38 784.37,724.89">
+                                        </polygon>
+                                        <polygon fill="#8C8C8C" fill-rule="nonzero"
+                                            points="392.07,1277.38 392.07,956.52 -0,724.89"></polygon>
+                                        <polygon fill="#141414" fill-rule="nonzero"
+                                            points="392.07,882.29 784.13,650.54 392.07,472.33"></polygon>
+                                        <polygon fill="#393939" fill-rule="nonzero"
+                                            points="0,650.54 392.07,882.29 392.07,472.33"></polygon>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <div class="textBox">
+                            <p class="text head">Ethereum</p>
+                            <span>Cryptocurrency</span>
+                            <p id="price" style="font-size: 17px;">1.654,34€</p>
+                        </div>
+                    </div>
+                    <div class="maintg right" id="two">
+                        <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Если у вас вдруг появяться вопросы, вы
+                            можете написать нам в личные сообщения в телеграмм и мы спешно ответим на них!</p>
+                        <a class="m-8-btn" href="https://t.me/ahill_trader">
+                            <p style="padding-left: 10px;">Написать</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
             <main>
                 <div class="containers" style=" width: 100%; margin-bottom: 18vh;">
                     <section data-speed="2" class="about" style="text-align: center; width: 100%;">
                         <p style="font-size: 200%;">Здесь вы можете найти наши результаты</p>
                     </section>
-                    <section id="gallery" data-speed=".9" style="width: 100%; display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; margin-top: 1vh;">
+                    <section id="gallery" data-speed=".9"
+                        style="width: 100%; display: flex; flex-direction: row; justify-content: space-around; flex-wrap: wrap; margin-top: 1vh;">
 
                         <div class="maintg left" style="margin: 5% 2% 5%;">
                             <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">В данном фото альбоме вы можете увидеть
@@ -202,13 +232,16 @@
                     <div style="display:flex; justify-content: space-around; flex-wrap: wrap; margin-top: 20%; ">
 
                         <div class="maintg left" style="margin-left: 2%; margin-right: 2%;">
-                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Наш канал всегда следит за сделками, и держит наших подписчиков на чеку! Если у рынка не понятное поведение наша комнда будет уведомлять вас о каждом импульсе и будет помогать принимать решенья, поэтому предлогаю вам подписаться, закрепить канал и ждать нового сигнала!</p>
+                            <p style="text-shadow: 1px 1px 2px rgb(0, 0, 0);">Наш канал всегда следит за сделками, и
+                                держит наших подписчиков на чеку! Если у рынка не понятное поведение наша комнда будет
+                                уведомлять вас о каждом импульсе и будет помогать принимать решенья, поэтому предлогаю
+                                вам подписаться, закрепить канал и ждать нового сигнала!</p>
                             </a>
                         </div>
 
                         <div class="iphone right">
                             <div class="iphone-14">
-                                <div class="operator-name">Coding</div>
+                                <div class="operator-name">Achilles</div>
                                 <div class="dynamic-island"></div>
                                 <div class="dynamic-island-camera"></div>
                                 <div class="operator-icons">
@@ -229,42 +262,45 @@
                                     <a target="_blank">
                                         <img class="img" src="img/tg.svg" width="30" height="30"
                                             style="display: block; float: left; margin-right: 40px; margin-top: 10px;">
-                                        <div style="display: flex; flex-direction: column; margin-left: 40px; justify-content: center; margin-top: 5px; margin-bottom: 5px; margin-right: 5px;">
-                                            <p style="font-family: sf-pro; font-size: 15px; margin: 0;">Пятка ахиллеса trading</p>
+                                        <div
+                                            style="display: flex; flex-direction: column; margin-left: 40px; justify-content: center; margin-top: 5px; margin-bottom: 5px; margin-right: 5px;">
+                                            <p style="font-family: sf-pro; font-size: 15px; margin: 0;">Пятка ахиллеса
+                                                trading</p>
                                             <div class="notification-text">Забрали первый тэйк</div>
                                         </div>
                                     </a>
                                 </div>
-                            
-                            <div class="flash-and-camera">
-                                <a target="_blank"><img
-                                        src="https://raw.githubusercontent.com/zouraiz523/iphone-14-pro-max/main/Phone%2014%20Pro%20Max%20and%20Dynamic%20Island/img-L.png"
-                                        width="20" />
-                                    <i class="bi bi-camera-fill"></i></a>
-                            </div>
 
-                            <div class="line"></div>
+                                <div class="flash-and-camera">
+                                    <a target="_blank"><img
+                                            src="https://raw.githubusercontent.com/zouraiz523/iphone-14-pro-max/main/Phone%2014%20Pro%20Max%20and%20Dynamic%20Island/img-L.png"
+                                            width="20" />
+                                        <i class="bi bi-camera-fill"></i></a>
+                                </div>
+
+                                <div class="line"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
+            </main>
+
+            <footer>
+                <div style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
+                    <a class="m-8-btn" style="margin-top: 10px; margin-bottom: 10px;"
+                        href="https://t.me/+wbqj12wu4d01NDhi">
+                        <p style="padding-left: 10px;">Наш канал</p>
+                    </a>
+                    <div id="footer" style="font-size: 20px; margin-top: 5vh;">
+                        &copy; All rights reserved
+                    </div>
+                    <a class="m-8-btn" style="margin-top: 10px; margin-bottom: 10px;" href="https://t.me/ahill_trader">
+                        <p style="padding-left: 10px;">Связь с нами</p>
+                    </a>
+                </div>
+            </footer>
         </div>
-        </main>
-
-        <footer>
-            <div style="display: flex; flex-direction: row; justify-content: space-around; width: 100%;">
-                <a class="m-8-btn" style="margin-top: 10px; margin-bottom: 10px;" href="https://t.me/+wbqj12wu4d01NDhi">
-                    <p style="padding-left: 10px;">Наш канал</p>
-                </a>
-                <div id="footer" style="font-size: 20px; margin-top: 5vh;">
-                    &copy; All rights reserved
-                </div>
-                <a class="m-8-btn" style="margin-top: 10px; margin-bottom: 10px;" href="https://t.me/ahill_trader">
-                    <p style="padding-left: 10px;">Связь с нами</p>
-                </a>
-            </div>
-        </footer>
-    </div>
     </div>
     <script src="script.js"></script>
 </body>
