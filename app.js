@@ -8,15 +8,7 @@ ScrollSmoother.create({
     effects: true
 })
 
-gsap.fromTo('#tgblock', { opacity: 1 }, {
-    opacity: 0,
-    scrollTrigger: {
-        trigger: '#tgblock',
-        start: 'center',
-        end: '820',
-        scrub: true
-    }
-})
+
 
 let itemsL = gsap.utils.toArray('.left')
 
