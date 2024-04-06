@@ -9,7 +9,6 @@ ScrollSmoother.create({
 })
 
 
-
 let itemsL = gsap.utils.toArray('.left')
 
 	itemsL.forEach(item => {
